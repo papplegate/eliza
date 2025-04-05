@@ -1,7 +1,7 @@
 {
     // 1) Men are all alike. -> In what way?
     // 10) You are like my father in some ways. -> What resemblance do you see?
-    "alike|same": {
+    "alike|same|like": {
         "rank": 10,
         "responses": {
             "*": [
@@ -49,6 +49,9 @@
                 "is it important to you that your \1"
             ]
         }
+    },
+    "me": {
+	"replace": "you"
     },
     // 4) He says I'm depressed much of the time. -> I am sorry to hear you are depressed.
     "i'm": {
