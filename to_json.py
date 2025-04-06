@@ -7,4 +7,5 @@ substitutions = {
 for pattern, replacement in substitutions.items():
     line = re.compile(pattern).sub(replacement, line)
 exec('line = ' + line)
+line = {line[0][0]: {line[0][1][0][0]: [' '.join(element) for element in line[0][1]]}} 
 print(line)
