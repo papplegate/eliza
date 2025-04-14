@@ -1,14 +1,25 @@
 import re
-substitutions = {
+
+SUBSTITUTIONS = {
     r'([^() \n]+)': r'"\1",',  # delineate "strings" 
     r'\)(?!\n)': r'),',  # add commas after "tuples"
 }
 
+result = {}
 with open('weizenbaum_1966_appendix.txt', 'r') as appendix:
     for i, line in enumerate(appendix):
-        if i < 2:
+
+        if i < 2 or i > 69:
             continue
-        for pattern, replacement in substitutions.items():
+
+        for pattern, replacement in SUBSTITUTIONS.items():
             line = re.compile(pattern).sub(replacement, line)
-        exec('line = ' + line)
-        print(line)
+        exec('parsed = ' + line)
+
+        result[parsed[0]] = {}
+        try:
+            result[parsed[0]] = {'score': int(parsed[1])}
+        except (ValueError, TypeError):
+            pass
+
+print(result)
