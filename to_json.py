@@ -17,9 +17,9 @@ with open('weizenbaum_1966_appendix.txt', 'r') as appendix:
         exec('parsed = ' + line)
 
         result[parsed[0]] = {}
-        try:
-            result[parsed[0]] = {'score': int(parsed[1])}
-        except (ValueError, TypeError):
-            pass
+
+        for element in parsed[1:]:
+            if type(element) == str and re.compile(r'\d+').search(element):
+                result[parsed[0]]['score'] = int(element)
 
 print(result)
