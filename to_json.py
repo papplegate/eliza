@@ -28,8 +28,10 @@ with open('weizenbaum_1966_appendix.txt', 'r') as appendix:
                     result[keyword]['score'] = int(element)
                 elif element == '=':
                     result[keyword]['replace'] = stack.pop()
-                else:
-                    print(f"No match for {element} in {parsed}")
+                # else:
+                #     print(f"No match for {element} in {parsed}")
+            if type(element) == tuple:
+                result[keyword]["replacements"] = result[keyword].get('replacements', {}) | {element[0]: element[1:]}
         # types = []
         # for element in parsed[1:]:
         #     types.append(str(type(element)))
