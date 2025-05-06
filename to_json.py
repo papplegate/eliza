@@ -1,4 +1,4 @@
-import re
+import json, re
 
 SUBSTITUTIONS = {
     r'([^() \n]+)': r'"\1",',  # delineate "strings" 
@@ -31,12 +31,10 @@ with open('weizenbaum_1966_appendix.txt', 'r') as appendix:
                 # else:
                 #     print(f"No match for {element} in {parsed}")
             if type(element) == tuple:
-                result[keyword]["replacements"] = result[keyword].get('replacements', {}) | {element[0]: element[1:]}
-        # types = []
-        # for element in parsed[1:]:
-        #     types.append(str(type(element)))
-        #     if type(element) == str and re.compile(r'\d+').search(element):
-        #         result[parsed[0]]['score'] = int(element)
-        # print(types)
+                try:
+                    result[keyword]["replacements"] = result[keyword].get('replacements', {}) | {element[0][0]: [' '.join(replacement) for replacement in element[1:]]}
+                except:
+                    ...
+                    # print(element)
 
-print(result)
+print(json.dumps(result, indent=4))
