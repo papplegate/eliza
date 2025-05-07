@@ -31,7 +31,7 @@ with open('weizenbaum_1966_appendix.txt', 'r') as appendix:
                 # else:
                 #     print(f"No match for {element} in {parsed}")
             if type(element) == tuple:
-                if type(element[0]) is str and element[0][0] is '=':
+                if type(element[0]) is str and element[0][0] == '=':
                     result[keyword]["go_to"] = element[0][1:] 
                     continue
                 try:
