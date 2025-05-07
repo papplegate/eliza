@@ -31,8 +31,12 @@ with open('weizenbaum_1966_appendix.txt', 'r') as appendix:
                 # else:
                 #     print(f"No match for {element} in {parsed}")
             if type(element) == tuple:
+                if type(element[0]) is str and element[0][0] is '=':
+                    result[keyword]["go_to"] = element[0][1:] 
+                    continue
                 try:
-                    result[keyword]["replacements"] = result[keyword].get('replacements', {}) | {element[0][0]: [' '.join(replacement) for replacement in element[1:]]}
+                    pattern = ' '.join(element[0]) if type(element[0]) is tuple else element[0][0]
+                    result[keyword]["replacements"] = result[keyword].get('replacements', {}) | {pattern: [' '.join(replacement) for replacement in element[1:]]}
                 except:
                     ...
                     # print(element)
