@@ -38,17 +38,16 @@ with open('weizenbaum_1966_appendix.txt', 'r') as appendix:
                 if re.compile(r'\d+').search(element):
                     result[keyword]['score'] = int(element)
                 elif element == '=':
-                    result[keyword]['replace'] = stack.pop()
+                    result[keyword]['replacement'] = stack.pop()
                 else:
-                    print(f"No match for {element} in {parsed}")
-                    unparsed += 1
+                    result[keyword]['occurs_with'] = element
             if type(element) == tuple:
                 if type(element[0]) is str and element[0][0] == '=':
                     result[keyword]["go_to"] = element[0][1:] 
                     continue
                 try:
                     pattern = ' '.join(element[0]) if type(element[0]) is tuple else element[0][0]
-                    result[keyword]["replacements"] = result[keyword].get('replacements', {}) | {pattern: [' '.join(replacement) for replacement in element[1:]]}
+                    result[keyword]["transformations"] = result[keyword].get('transformations', {}) | {pattern: [' '.join(transformation) for transformation in element[1:]]}
                 except:
                     # print(f"No match for {element} in {parsed}")
                     unparsed += 1
