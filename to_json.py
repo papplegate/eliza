@@ -34,7 +34,7 @@ with open('weizenbaum_1966_appendix.txt', 'r') as appendix:
         while len(stack):
             element = stack.pop()
             total += 1
-            if type(element) == str:
+            if isinstance(element, str):
                 if re.compile(r'\d+').search(element):
                     result[keyword]['score'] = int(element)
                 elif element == '=':
