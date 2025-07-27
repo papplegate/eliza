@@ -40,14 +40,25 @@ with open('weizenbaum_1966_appendix.txt', 'r') as appendix:
                 elif element == '=':
                     result[keyword]['replacement'] = stack.pop()
                 else:
-                    result[keyword]['occurs_with'] = element
-            if type(element) == tuple:
-                if type(element[0]) is str and element[0][0] == '=':
+                    result[keyword]['apply_before_transformations'] = element
+                continue
+
+            if isinstance(element, tuple):
+                if isinstance(element[0], str) and element[0][0] == '=':
                     result[keyword]["go_to"] = element[0][1:] 
                     continue
+
+                if '=' in element:
+                    equals_index = element.index('=')
+                    pattern = ' '.join(element[:equals_index])
+                    transformation = ' '.join(element[equals_index + 1:])
+                    result[keyword]["transformations"] = result[keyword].get('transformations', {pattern: []})
+                    result[keyword]["transformations"][pattern].append(transformation)
+                    continue
+
                 try:
-                    pattern = ' '.join(element[0]) if type(element[0]) is tuple else element[0][0]
-                    result[keyword]["transformations"] = result[keyword].get('transformations', {}) | {pattern: [' '.join(transformation) for transformation in element[1:]]}
+                    pattern = ' '.join(element[0]) if isinstance(element[0], tuple) else element[0][0]
+                    result[keyword]["transformations"] = result[keyword].get("transformations", {}) | {pattern: [' '.join(transformation) for transformation in element[1:]]} 
                 except:
                     # print(f"No match for {element} in {parsed}")
                     unparsed += 1
