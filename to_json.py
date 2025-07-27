@@ -6,6 +6,7 @@ SUBSTITUTIONS = {
 }
 
 result = {}
+unmatched = []
 with open('weizenbaum_1966_appendix.txt', 'r') as appendix:
     total = 0
     unparsed = 0
@@ -40,7 +41,7 @@ with open('weizenbaum_1966_appendix.txt', 'r') as appendix:
                 elif element == '=':
                     result[keyword]['replacement'] = stack.pop()
                 else:
-                    result[keyword]['apply_before_transformations'] = element
+                    result[keyword]['replace_before_transforming'] = element
                 continue
 
             if isinstance(element, tuple):
@@ -60,8 +61,7 @@ with open('weizenbaum_1966_appendix.txt', 'r') as appendix:
                     pattern = ' '.join(element[0]) if isinstance(element[0], tuple) else element[0][0]
                     result[keyword]["transformations"] = result[keyword].get("transformations", {}) | {pattern: [' '.join(transformation) for transformation in element[1:]]} 
                 except:
-                    # print(f"No match for {element} in {parsed}")
-                    unparsed += 1
+                    unmatched.append(str(element))
 
+result['unmatched'] = unmatched
 print(json.dumps(result, indent=4))
-print(total, unparsed, unparsed/total)
