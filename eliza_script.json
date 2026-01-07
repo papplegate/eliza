@@ -1,0 +1,685 @@
+{
+  "greeting": "HOW DO YOU DO. PLEASE TELL ME YOUR PROBLEM",
+  "keywords": {
+    "HOW": {
+      "rank": 0,
+      "substitution": "WHAT"
+    },
+    "SORRY": {
+      "rank": 0,
+      "responses": {
+        "": [
+          "PLEASE DON'T APOLIGIZE",
+          "APOLOGIES ARE NOT NECESSARY",
+          "WHAT FEELINGS DO YOU HAVE WHEN YOU APOLOGIZE",
+          "I'VE TOLD YOU THAT APOLOGIES ARE NOT REQUIRED"
+        ]
+      }
+    },
+    "REMEMBER": {
+      "rank": 5,
+      "responses": {
+        "YOU REMEMBER(.*)": [
+          "DO YOU OFTEN THINK OF 1",
+          "DOES THINKING OF 1 BRING ANYTHING ELSE TO MIND",
+          "WHAT ELSE DO YOU REMEMBER",
+          "WHY DO YOU REMEMBER 1 JUST NOW",
+          "WHAT IN THE PRESENT SITUATION REMINDS YOU OF 1",
+          "WHAT IS THE CONNECTION BETWEEN ME AND 1"
+        ],
+        "DO I REMEMBER(.*)": [
+          "DID YOU THINK I WOULD FORGET 1",
+          "WHY DO YOU THINK I SHOULD RECALL 1 NOW",
+          "WHAT ABOUT 1",
+          {
+            "type": "goto",
+            "keyword": "WHAT"
+          },
+          "YOU MENTIONED 1"
+        ],
+        "": [
+          {
+            "type": "newkey"
+          }
+        ]
+      }
+    },
+    "IF": {
+      "rank": 3,
+      "responses": {
+        "IF(.*)": [
+          "DO YOU THINK ITS LIKELY THAT 1",
+          "DO YOU WISH THAT 1",
+          "WHAT DO YOU THINK ABOUT 1",
+          "REALLY, 2 1"
+        ]
+      }
+    },
+    "DREAMT": {
+      "rank": 4,
+      "responses": {
+        "YOU DREAMT(.*)": [
+          "REALLY, 1",
+          "HAVE YOU EVER FANTASIED 1 WHILE YOU WERE AWAKE",
+          "HAVE YOU DREAMT 1 BEFORE",
+          {
+            "type": "goto",
+            "keyword": "DREAM"
+          },
+          {
+            "type": "newkey"
+          }
+        ]
+      }
+    },
+    "DREAMED": {
+      "rank": 4,
+      "substitution": "DREAMT"
+    },
+    "DREAM": {
+      "rank": 3,
+      "responses": {
+        "": [
+          "WHAT DOES THAT DREAM SUGGEST TO YOU",
+          "DO YOU DREAM OFTEN",
+          "WHAT PERSONS APPEAR IN YOUR DREAMS",
+          "DON'T YOU BELIEVE THAT DREAM HAS SOMETHING TO DO WITH YOUR PROBLEM",
+          {
+            "type": "newkey"
+          }
+        ]
+      }
+    },
+    "DREAMS": {
+      "rank": 3,
+      "substitution": "DREAM"
+    },
+    "WHEN": {
+      "rank": 0,
+      "substitution": "WHAT"
+    },
+    "ALIKE": {
+      "rank": 10,
+      "substitution": "DIT"
+    },
+    "SAME": {
+      "rank": 10,
+      "substitution": "DIT"
+    },
+    "CERTAINLY": {
+      "rank": 0,
+      "substitution": "YES"
+    },
+    "NONE": {
+      "rank": 0,
+      "responses": {
+        "": [
+          "I AM NOT SURE I UNDERSTAND YOU FULLY",
+          "PLEASE GO ON",
+          "WHAT DOES THAT SUGGEST TO YOU",
+          "DO YOU FEEL STRONGLY ABOUT DISCUSSING SUCH THINGS"
+        ]
+      }
+    },
+    "PERHAPS": {
+      "rank": 0,
+      "responses": {
+        "": [
+          "YOU DON'T SEEM QUITE CERTAIN",
+          "WHY THE UNCERTAIN TONE",
+          "CAN'T YOU BE MORE POSITIVE",
+          "YOU AREN'T SURE",
+          "DON'T YOU KNOW"
+        ]
+      }
+    },
+    "MAYBE": {
+      "rank": 0,
+      "substitution": "PERHAPS"
+    },
+    "NAME": {
+      "rank": 15,
+      "responses": {
+        "": [
+          "I AM NOT INTERESTED IN NAMES",
+          "I'VE TOLD YOU BEFORE, I DON'T CARE ABOUT NAMES - PLEASE CONTINUE"
+        ]
+      }
+    },
+    "DEUTSCH": {
+      "rank": 0,
+      "substitution": "XFREMD"
+    },
+    "FRANCAIS": {
+      "rank": 0,
+      "substitution": "XFREMD"
+    },
+    "ITALIANO": {
+      "rank": 0,
+      "substitution": "XFREMD"
+    },
+    "ESPANOL": {
+      "rank": 0,
+      "substitution": "XFREMD"
+    },
+    "XFREMD": {
+      "rank": 0,
+      "responses": {
+        "": [
+          "I AM SORRY, I SPEAK ONLY ENGLISH"
+        ]
+      }
+    },
+    "HELLO": {
+      "rank": 0,
+      "responses": {
+        "": [
+          "HOW DO YOU DO, PLEASE STATE YOUR PROBLEM"
+        ]
+      }
+    },
+    "COMPUTER": {
+      "rank": 50,
+      "responses": {
+        "": [
+          "DO COMPUTERS WORRY YOU",
+          "WHY DO YOU MENTION COMPUTERS",
+          "WHAT DO YOU THINK MACHINES HAVE TO DO WITH YOUR PROBLEM",
+          "DON'T YOU THINK COMPUTERS CAN HELP PEOPLE",
+          "WHAT ABOUT MACHINES WORRIES YOU",
+          "WHAT DO YOU THINK ABOUT MACHINES"
+        ]
+      }
+    },
+    "MACHINE": {
+      "rank": 50,
+      "substitution": "COMPUTER"
+    },
+    "MACHINES": {
+      "rank": 50,
+      "substitution": "COMPUTER"
+    },
+    "COMPUTERS": {
+      "rank": 50,
+      "substitution": "COMPUTER"
+    },
+    "AM": {
+      "rank": 0,
+      "responses": {
+        "ARE YOU(.*)": [
+          "DO YOU BELIEVE YOU ARE 1",
+          "WOULD YOU WANT TO BE 1",
+          "YOU WISH I WOULD TELL YOU YOU ARE 1",
+          "WHAT WOULD IT MEAN IF YOU WERE 1",
+          {
+            "type": "goto",
+            "keyword": "WHAT"
+          }
+        ],
+        "": [
+          "WHY DO YOU SAY 'AM'",
+          "I DON'T UNDERSTAND THAT"
+        ]
+      },
+      "substitution": "ARE"
+    },
+    "ARE": {
+      "rank": 0,
+      "responses": {
+        "ARE I(.*)": [
+          "WHY ARE YOU INTERESTED IN WHETHER I AM 1 OR NOT",
+          "WOULD YOU PREFER IF I WEREN'T 1",
+          "PERHAPS I AM 1 IN YOUR FANTASIES",
+          "DO YOU SOMETIMES THINK I AM 1",
+          {
+            "type": "goto",
+            "keyword": "WHAT"
+          }
+        ],
+        "ARE(.*)": [
+          "DID YOU THINK THEY MIGHT NOT BE 1",
+          "WOULD YOU LIKE IT IF THEY WERE NOT 1",
+          "WHAT IF THEY WERE NOT 1",
+          "POSSIBLY THEY ARE 1"
+        ]
+      }
+    },
+    "YOUR": {
+      "rank": 0,
+      "responses": {
+        "MY(.*)": [
+          "WHY ARE YOU CONCERNED OVER MY 1",
+          "WHAT ABOUT YOUR OWN 1",
+          "ARE YOU WORRIED ABOUT SOMEONE ELSES 1",
+          "REALLY, MY 1"
+        ]
+      },
+      "substitution": "MY"
+    },
+    "WAS": {
+      "rank": 2,
+      "responses": {
+        "WAS YOU(.*)": [
+          "WHAT IF YOU WERE 1",
+          "DO YOU THINK YOU WERE 1",
+          "WERE YOU 1",
+          "WHAT WOULD IT MEAN IF YOU WERE 1",
+          "WHAT DOES ' 1 ' SUGGEST TO YOU",
+          {
+            "type": "goto",
+            "keyword": "WHAT"
+          }
+        ],
+        "YOU WAS(.*)": [
+          "WERE YOU REALLY",
+          "WHY DO YOU TELL ME YOU WERE 1 NOW",
+          "PERHAPS I ALREADY KNEW YOU WERE 1"
+        ],
+        "WAS I(.*)": [
+          "WOULD YOU LIKE TO BELIEVE I WAS 1",
+          "WHAT SUGGESTS THAT I WAS 1",
+          "WHAT DO YOU THINK",
+          "PERHAPS I WAS 1",
+          "WHAT IF I HAD BEEN 1"
+        ],
+        "": [
+          {
+            "type": "newkey"
+          }
+        ]
+      }
+    },
+    "WERE": {
+      "rank": 0,
+      "substitution": "WAS"
+    },
+    "YOU'RE": {
+      "rank": 0,
+      "responses": {
+        "I'M(.*)": [
+          {
+            "type": "pre",
+            "transformation": [
+              "I",
+              "ARE",
+              "1"
+            ],
+            "target": [
+              "=YOU"
+            ]
+          }
+        ]
+      },
+      "substitution": "I'M"
+    },
+    "I'M": {
+      "rank": 0,
+      "responses": {
+        "YOU'RE(.*)": [
+          {
+            "type": "pre",
+            "transformation": [
+              "YOU",
+              "ARE",
+              "1"
+            ],
+            "target": [
+              "=I"
+            ]
+          }
+        ]
+      },
+      "substitution": "YOU'RE"
+    },
+    "MOM": {
+      "rank": 0,
+      "substitution": "MOTHER"
+    },
+    "DAD": {
+      "rank": 0,
+      "substitution": "FATHER"
+    },
+    "I": {
+      "rank": 0,
+      "responses": {
+        "YOU (?:WANT|NEED)(.*)": [
+          "WHAT WOULD IT MEAN TO YOU IF YOU GOT 1",
+          "WHY DO YOU WANT 1",
+          "SUPPOSE YOU GOT 1 SOON",
+          "WHAT IF YOU NEVER GOT 1",
+          "WHAT WOULD GETTING 1 MEAN TO YOU",
+          "WHAT DOES WANTING 1 HAVE TO DO WITH THIS DISCUSSION"
+        ],
+        "YOU ARE.*?((?:SAD|UNHAPPY|DEPRESSED|SICK)).*": [
+          "I AM SORRY TO HEAR YOU ARE 1",
+          "DO YOU THINK COMING HERE WILL HELP YOU NOT TO BE 1",
+          "I'M SURE ITS NOT PLEASANT TO BE 1",
+          "CAN YOU EXPLAIN WHAT MADE YOU 1"
+        ],
+        "YOU ARE.*?((?:HAPPY|ELATED|GLAD|BETTER)).*": [
+          "HOW HAVE I HELPED YOU TO BE 1",
+          "HAS YOUR TREATMENT MADE YOU 1",
+          "WHAT MAKES YOU 1 JUST NOW",
+          "CAN YOU EXPLAIN WHY YOU ARE SUDDENLY 1"
+        ],
+        "YOU WAS.*": [
+          {
+            "type": "goto",
+            "keyword": "WAS"
+          }
+        ],
+        "YOU /BELIEF YOU(.*)": [
+          "DO YOU REALLY THINK SO",
+          "BUT YOU ARE NOT SURE YOU 1",
+          "DO YOU REALLY DOUBT YOU 1"
+        ],
+        "YOU.*?/BELIEF.*?I.*": [
+          {
+            "type": "goto",
+            "keyword": "YOU"
+          }
+        ],
+        "YOU ARE(.*)": [
+          "IS IT BECAUSE YOU ARE 1 THAT YOU CAME TO ME",
+          "HOW LONG HAVE YOU BEEN 1",
+          "DO YOU BELIEVE IT NORMAL TO BE 1",
+          "DO YOU ENJOY BEING 1"
+        ],
+        "YOU (?:CAN'T|CANNOT)(.*)": [
+          "HOW DO YOU KNOW YOU CAN'T 1",
+          "HAVE YOU TRIED",
+          "PERHAPS YOU COULD 1 NOW",
+          "DO YOU REALLY WANT TO BE ABLE TO 1"
+        ],
+        "YOU DON'T(.*)": [
+          "DON'T YOU REALLY 1",
+          "WHY DON'T YOU 1",
+          "DO YOU WISH TO BE ABLE TO 1",
+          "DOES THAT TROUBLE YOU"
+        ],
+        "YOU FEEL(.*)": [
+          "TELL ME MORE ABOUT SUCH FEELINGS",
+          "DO YOU OFTEN FEEL 1",
+          "DO YOU ENJOY FEELING 1",
+          "OF WHAT DOES FEELING 1 REMIND YOU"
+        ],
+        "YOU(.*?)I.*": [
+          "PERHAPS IN YOUR FANTASY WE 1 EACH OTHER",
+          "DO YOU WISH TO 1 ME",
+          "YOU SEEM TO NEED TO 1 ME",
+          "DO YOU 1 ANYONE ELSE",
+          "['0'] ['YOU', 'SAY', '1'] ['CAN', 'YOU', 'ELABORATE', 'ON', 'THAT'] ['DO', 'YOU', 'SAY', '1', 'FOR', 'SOME', 'SPECIAL', 'REASON'] [\"THAT'S\", 'QUITE', 'INTERESTING']"
+        ]
+      },
+      "substitution": "YOU"
+    },
+    "YOU": {
+      "rank": 0,
+      "responses": {
+        "I REMIND YOU OF.*": [
+          {
+            "type": "goto",
+            "keyword": "DIT"
+          }
+        ],
+        "I ARE(.*)": [
+          "WHAT MAKES YOU THINK I AM 1",
+          "DOES IT PLEASE YOU TO BELIEVE I AM 1",
+          "DO YOU SOMETIMES WISH YOU WERE 1",
+          "PERHAPS YOU WOULD LIKE TO BE 1"
+        ],
+        "I(.*)YOU": [
+          "WHY DO YOU THINK I 1 YOU",
+          "YOU LIKE TO THINK I 1 YOU - DON'T YOU",
+          "WHAT MAKES YOU THINK I 1 YOU",
+          "REALLY, I 1 YOU",
+          "DO YOU WISH TO BELIEVE I 1 YOU",
+          "SUPPOSE I DID 1 YOU - WHAT WOULD THAT MEAN",
+          "DOES SOMEONE ELSE BELIEVE I 1 YOU"
+        ],
+        "I(.*)": [
+          "WE WERE DISCUSSING YOU - NOT ME",
+          "OH, I 1",
+          "YOU'RE NOT REALLY TALKING ABOUT ME - ARE YOU",
+          "WHAT ARE YOUR FEELINGS NOW"
+        ]
+      },
+      "substitution": "I"
+    },
+    "YES": {
+      "rank": 0,
+      "responses": {
+        "": [
+          "YOU SEEM QUITE POSITIVE",
+          "YOU ARE SURE",
+          "I SEE",
+          "I UNDERSTAND"
+        ]
+      }
+    },
+    "NO": {
+      "rank": 0,
+      "responses": {
+        "": [
+          "ARE YOU SAYING 'NO' JUST TO BE NEGATIVE",
+          "YOU ARE BEING A BIT NEGATIVE",
+          "WHY NOT",
+          "WHY 'NO'"
+        ]
+      }
+    },
+    "MY": {
+      "rank": 2,
+      "responses": {
+        "YOUR.*?(/FAMILY)(.*)": [
+          "TELL ME MORE ABOUT YOUR FAMILY",
+          "WHO ELSE IN YOUR FAMILY 2",
+          "YOUR 1",
+          "WHAT ELSE COMES TO MIND WHEN YOU THINK OF YOUR 1"
+        ],
+        "YOUR(.*)": [
+          "YOUR 1",
+          "WHY DO YOU SAY YOUR 1",
+          "DOES THAT SUGGEST ANYTHING ELSE WHICH BELONGS TO YOU",
+          "IS IT IMPORTANT TO YOU THAT 2 1"
+        ]
+      },
+      "substitution": "YOUR"
+    },
+    "CAN": {
+      "rank": 0,
+      "responses": {
+        "CAN I(.*)": [
+          "YOU BELIEVE I CAN 1 DON'T YOU",
+          {
+            "type": "goto",
+            "keyword": "WHAT"
+          },
+          "YOU WANT ME TO BE ABLE TO 1",
+          "PERHAPS YOU WOULD LIKE TO BE ABLE TO 1 YOURSELF"
+        ],
+        "CAN YOU(.*)": [
+          "WHETHER OR NOT YOU CAN DEPENDS ON YOU MORE THAN ON ME",
+          "DO YOU WANT TO BE ABLE TO 1",
+          "PERHAPS YOU DON'T WANT TO 1",
+          {
+            "type": "goto",
+            "keyword": "WHAT"
+          }
+        ]
+      }
+    },
+    "WHAT": {
+      "rank": 0,
+      "responses": {
+        "": [
+          "WHY DO YOU ASK",
+          "DOES THAT QUESTION INTEREST YOU",
+          "WHAT IS IT YOU REALLY WANT TO KNOW",
+          "ARE SUCH QUESTIONS MUCH ON YOUR MIND",
+          "WHAT ANSWER WOULD PLEASE YOU MOST",
+          "WHAT DO YOU THINK",
+          "WHAT COMES TO YOUR MIND WHEN YOU ASK THAT",
+          "HAVE YOU ASKED SUCH QUESTION BEFORE",
+          "HAVE YOU ASKED ANYONE ELSE"
+        ]
+      }
+    },
+    "BECAUSE": {
+      "rank": 0,
+      "responses": {
+        "": [
+          "IS THAT THE REAL REASON",
+          "DON'T ANY OTHER REASONS COME TO MIND",
+          "DOES THAT REASON SEEM TO EXPLAIN ANYTHING ELSE",
+          "WHAT OTHER REASONS MIGHT THERE BE"
+        ]
+      }
+    },
+    "WHY": {
+      "rank": 0,
+      "responses": {
+        "WHY DON'T I(.*)": [
+          "DO YOU BELIEVE I DON'T 1",
+          "PERHAPS I WILL 1 IN GOOD TIME",
+          "SHOULD YOU 1 YOURSELF",
+          "YOU WANT ME TO 1",
+          {
+            "type": "goto",
+            "keyword": "WHAT"
+          }
+        ],
+        "WHY CAN'T YOU(.*)": [
+          "DO YOU THINK YOU SHOULD BE ABLE TO 1",
+          "DO YOU WANT TO BE ABLE TO 1",
+          "DO YOU BELIEVE THIS WILL HELP YOU TO 1",
+          "HAVE YOU ANY IDEA WHY YOU CAN'T 1",
+          {
+            "type": "goto",
+            "keyword": "WHAT"
+          }
+        ]
+      }
+    },
+    "EVERYONE": {
+      "rank": 2,
+      "responses": {
+        "((?:EVERYONE|EVERYBODY|NOBODY|NOONE)).*": [
+          "REALLY, 1",
+          "SURELY NOT 1",
+          "CAN YOU THINK OF ANYONE IN PARTICULAR",
+          "WHO, FOR EXAMPLE",
+          "YOU ARE THINKING OF A VERY SPECIAL PERSON",
+          "WHO, MAY I ASK",
+          "SOMEONE SPECIAL PERHAPS",
+          "YOU HAVE A PARTICULAR PERSON IN MIND, DON'T YOU",
+          "WHO DO YOU THINK YOU'RE TALKING ABOUT"
+        ]
+      }
+    },
+    "EVERYBODY": {
+      "rank": 2,
+      "substitution": "EVERYONE"
+    },
+    "NOBODY": {
+      "rank": 2,
+      "substitution": "EVERYONE"
+    },
+    "NOONE": {
+      "rank": 2,
+      "substitution": "EVERYONE"
+    },
+    "ALWAYS": {
+      "rank": 0,
+      "responses": {
+        "": [
+          "CAN YOU THINK OF A SPECIFIC EXAMPLE",
+          "WHEN",
+          "WHAT INCIDENT ARE YOU THINKING OF",
+          "REALLY, ALWAYS"
+        ]
+      }
+    },
+    "LIKE": {
+      "rank": 10,
+      "responses": {
+        "(?:AM|IS|ARE|WAS).*?LIKE.*": [
+          {
+            "type": "goto",
+            "keyword": "DIT"
+          }
+        ],
+        "": [
+          {
+            "type": "newkey"
+          }
+        ]
+      }
+    },
+    "DIT": {
+      "rank": 0,
+      "responses": {
+        "": [
+          "IN WHAT WAY",
+          "WHAT RESEMBLANCE DO YOU SEE",
+          "WHAT DOES THAT SIMILARITY SUGGEST TO YOU",
+          "WHAT OTHER CONNECTIONS DO YOU SEE",
+          "WHAT DO YOU SUPPOSE THAT RESEMBLANCE MEANS",
+          "WHAT IS THE CONNECTION, DO YOU SUPPOSE",
+          "COULD THERE REALLY BE SOME CONNECTION",
+          "HOW"
+        ]
+      }
+    }
+  },
+  "word_lists": {
+    "BELIEF": [
+      "FEEL",
+      "THINK",
+      "BELIEVE",
+      "WISH"
+    ],
+    "NOUN_FAMILY": [
+      "MOTHER",
+      "FATHER"
+    ],
+    "FAMILY": [
+      "MOM",
+      "DAD",
+      "SISTER",
+      "BROTHER",
+      "WIFE",
+      "CHILDREN",
+      "MOTHER",
+      "FATHER"
+    ]
+  },
+  "pre_substitutions": {
+    "DONT": "DON'T",
+    "CANT": "CAN'T",
+    "WONT": "WON'T",
+    "ME": "YOU",
+    "MYSELF": "YOURSELF",
+    "YOURSELF": "MYSELF"
+  },
+  "memory_rules": {
+    "MY": [
+      {
+        "pattern": "YOUR(.*)",
+        "template": "LETS DISCUSS FURTHER WHY YOUR 1"
+      },
+      {
+        "pattern": "YOUR(.*)",
+        "template": "EARLIER YOU SAID YOUR 1"
+      },
+      {
+        "pattern": "YOUR(.*)",
+        "template": "BUT YOUR 1"
+      },
+      {
+        "pattern": "YOUR(.*)",
+        "template": "DOES THAT HAVE ANYTHING TO DO WITH THE FACT THAT YOUR 1"
+      }
+    ]
+  }
+}

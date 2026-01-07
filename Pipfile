@@ -1,0 +1,21 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+
+[dev-packages]
+pytest = "*"
+mypy = "*"
+pylint = "*"
+black = "*"
+
+[requires]
+python_version = "3"
+
+[scripts]
+test = "pytest -v"
+mypy = "mypy ."
+pylint = "pylint --disable=C0114,C0116 ."
+format = "black ."
